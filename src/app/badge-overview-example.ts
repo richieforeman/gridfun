@@ -10,7 +10,9 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['badge-overview-example.css'],
 })
 export class BadgeOverviewExample {
-  readonly control = new FormControl<string>("3,6,9");
+  readonly control = new FormControl<string>(
+    '3,4,3,4,3,6,3,4,3,10,3,3,4,6,3,8'
+  );
 
   getCells() {
     return this.control.value!.split(',');
