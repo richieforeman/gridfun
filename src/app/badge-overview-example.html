@@ -1,6 +1,22 @@
+<input type="text" [formControl]="control" id="cells"><button (click)="setCells()">go</button>
+
 <div class="page">
   <div class="grid">
-    <mat-card mat-cell="3">himom</mat-card>
-    <mat-card mat-cell="9">himom</mat-card>
+    <mat-card *ngFor="let c of getCells()" class="cell-{{c}} trackBy: c">meow</mat-card>
   </div>
 </div>
+
+<table>
+  <tr>
+    <td>Hi</td>
+    <td>Meow</td>
+  </tr>
+  <tr>
+    <td>Hi</td>
+    <td>Meow</td>
+  </tr>
+  <tr>
+    <td>Hi</td>
+    <td>Meow</td>
+  </tr>
+</table>

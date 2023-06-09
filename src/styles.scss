@@ -4,10 +4,15 @@ body {
   padding: 30px;
 }
 
+table {
+  width: 100%;
+  margin: 24px 0;
+  border: 1px solid red;
+}
+
 html,
 body {
   height: 100%;
-  --cols: 12;
 }
 
 .page {
@@ -18,13 +23,31 @@ body {
   justify-content: center;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (min-width: 1440px) {
+  body {
+    --cols: 24;
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 1280px) {
+  body {
+    --cols: 16;
+  }
+}
+
+@media only screen and (max-width: 1280px) and (min-width: 900px) {
+  body {
+    --cols: 12;
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 450px) {
   body {
     --cols: 9;
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 450px) and (min-width: 1px) {
   body {
     --cols: 1;
   }
@@ -41,10 +64,12 @@ mat-card {
   justify-items: stretch;
   width: 100%;
   grid-template-columns: repeat(var(--cols), 56px);
-  [mat-cell='3'] {
-    grid-column: span 3;
-  }
-  [mat-cell='9'] {
-    grid-column: span 9;
+  @for $i from 1 to 16 {
+    .cell-#{$i} {
+      grid-column: span #{$i};
+      @media only screen and (max-width: 450px) and (min-width: 1px) {
+        grid-column: 1fr;
+      }
+    }
   }
 }

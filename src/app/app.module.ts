@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [BadgeOverviewExample],
@@ -16,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
     BrowserModule,
     MatCardModule,
     FormsModule,
+    CommonModule,
     HttpClientModule,
     MatNativeDateModule,
     MaterialExampleModule,

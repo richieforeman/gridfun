@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 /**
  * @title Badge overview
@@ -9,13 +10,16 @@ import {Component} from '@angular/core';
   styleUrls: ['badge-overview-example.css'],
 })
 export class BadgeOverviewExample {
-  hidden = false;
+  readonly control = new FormControl<string>("3,6,9");
 
-  toggleBadgeVisibility() {
-    this.hidden = !this.hidden;
+  getCells() {
+    return this.control.value!.split(',');
+  }
+
+  setCells() {
+    //this.cells = [3, 6 9];
   }
 }
-
 
 /**  Copyright 2023 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
